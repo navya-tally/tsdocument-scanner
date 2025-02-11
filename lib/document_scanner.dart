@@ -31,7 +31,7 @@ class DocumentScanner {
   static Future<Map<String, dynamic>?> selectDocuments(
       {int noOfPages = 100, List<String>? sharedFiles}) async {
     Map<Permission, PermissionStatus> statuses = await [
-      Permission.photos,
+      Permission.mediaLibrary,
     ].request();
 
     if (statuses.containsValue(PermissionStatus.denied) ||
