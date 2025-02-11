@@ -1,8 +1,8 @@
 import 'dart:io';
+import 'package:document_scanner_example/sample.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:document_scanner/document_scanner.dart';
-
 
 void main() {
   runApp(const MyApp());
@@ -93,7 +93,7 @@ class _MyAppState extends State<MyApp> {
     List<String> pictures;
     try {
       pictures = await DocumentScanner.getPictures(noOfPages: 15, isGalleryImportAllowed: true) ?? [];
-      
+      print(pictures);
       if (!mounted) return;
       setState(() {
         _pictures = pictures;
